@@ -1,62 +1,100 @@
 .app-wrap {
-  padding-top: 50%;
+  padding-top: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .app-wrap h1 {
+  margin-bottom: 10px;
   color: #fff;
   white-space: nowrap;
 }
 
 .todo-item {
+  display: flex;
   margin-bottom: 10px;
   padding: 15px;
   width: 100%;
   font-size: 20px;
-  background-color: white;
-  display: flex;
+  border-radius: 8px;
   align-items: center;
   justify-content: space-between;
 }
+.todo-item:nth-of-type(4n+1) {
+  background: linear-gradient(90deg, rgb(80, 50, 255) 0%, rgb(155, 0, 250) 100%);
+}
+.todo-item:nth-of-type(4n+2) {
+  background: linear-gradient(90deg, rgb(255, 150, 80) 0%, rgb(250, 0, 55) 100%);
+}
+.todo-item:nth-of-type(4n) {
+  background: linear-gradient(90deg, rgb(50, 150, 40) 30%, rgb(50, 250, 150) 100%);
+}
+.todo-item:nth-of-type(4n+3) {
+  background: linear-gradient(90deg, rgb(50, 150, 250) 0%, rgb(20, 100, 150) 100%);
+}
 .todo-item .todo-value {
+  width: 85%;
+  background: none;
+  font-size: 22px;
+  font-weight: bold;
   outline: none;
   border: none;
+  resize: none;
+  color: white;
 }
 .todo-item .todo-delete {
-  height: 20px;
+  height: 30px;
   aspect-ratio: 1;
-  background-color: red;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 20px;
   border: none;
+  background: rgba(63, 63, 63, 0.6);
   cursor: pointer;
 }
 
 .todo-list {
   list-style-type: none;
-  padding: 0 100px;
+  padding: 0 10%;
   width: 100%;
 }
 
 .todo-form-wrap {
-  width: 100%;
-  border: 1px solid white;
   display: flex;
+  padding: 0 10%;
+  width: 90%;
   flex-direction: column;
   align-items: center;
 }
+.todo-form-wrap .todo-form {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
 .todo-form-wrap .todo-form .todo-input {
-  margin-bottom: 10px;
   padding: 15px;
-  width: 350px;
+  height: 50px;
+  width: 100%;
+  background: none;
   font-size: 20px;
-  margin: 30px 30px 30px 0;
+  font-weight: bold;
+  outline: none;
+  border: 3px solid rgb(90, 0, 250);
+  border-radius: 8px 0 0 8px;
+  color: white;
 }
 .todo-form-wrap .todo-form .todo-add {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 80px;
+  color: white;
   font-size: 20px;
+  outline: none;
+  border: none;
+  background: linear-gradient(90deg, rgb(90, 0, 250) 0%, rgb(150, 0, 250) 100%);
   cursor: pointer;
+  border-radius: 0 8px 8px 0;
 }
 
 * {

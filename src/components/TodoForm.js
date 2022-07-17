@@ -57,7 +57,7 @@ class TodoForm extends React.Component {
                     <input
                         className="todo-add"
                         type="submit"
-                        value="+"
+                        value="Add"
                         onClick={this.handleSubmit}
                     />
                 </form>

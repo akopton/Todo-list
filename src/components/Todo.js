@@ -5,7 +5,8 @@ class Todo extends React.Component {
         super(props);
         this.state = {
             value: this.props.value,
-            id: this.props.id
+            id: this.props.id,
+            bgColor: ''
         }
 
         this.handleChange = this.handleChange.bind(this)
