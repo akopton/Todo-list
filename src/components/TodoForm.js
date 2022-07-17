@@ -14,8 +14,20 @@ class TodoForm extends React.Component {
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-    handleSubtmit() {
+    handleSubtmit(e) {
+        e.preventDefault()
 
+        const obj = {
+            value: this.state.value,
+            id: Date.now()
+        }
+
+        if (this.state.value !== '') {
+            this.setState({
+                list: this.state.list.concat(obj),
+                value: ''
+            })
+        } else return
     }
 
     handleChange() {
@@ -36,6 +48,12 @@ class TodoForm extends React.Component {
                         placeholder=""
                         value={this.state.value}
                         onChange={this.state.handleChange}
+                    />
+                    <input
+                        className="todo-add"
+                        type="submit"
+                        value="+"
+                        onClick={this.handleSubtmit}
                     />
                 </form>
                 {/* <TodoList /> */}
