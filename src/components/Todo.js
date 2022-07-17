@@ -7,7 +7,7 @@ class Todo extends React.Component {
             value: this.props.value,
             id: this.props.id
         }
-        
+
         this.handleChange = this.handleChange.bind(this)
     }
 
@@ -22,10 +22,13 @@ class Todo extends React.Component {
         return (
             <li className="todo-item" key={this.state.id}>
                 <input
-                    className=""
+                    className="todo-value"
                     type="text"
                     value={this.state.value}
                     onChange={this.handleChange}
+                    onBlur={()=> {
+                        if (this.state.value == '') this.props.handleDelete(this.state.id)
+                    }}
                 />
                 <button className="todo-delete" onClick={this.props.handleDelete}>-</button>
             </li>

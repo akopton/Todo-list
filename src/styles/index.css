@@ -20,6 +20,10 @@
   align-items: center;
   justify-content: space-between;
 }
+.todo-item .todo-value {
+  outline: none;
+  border: none;
+}
 .todo-item .todo-delete {
   height: 20px;
   aspect-ratio: 1;
