@@ -9,12 +9,12 @@ class TodoForm extends React.Component {
             list: []
         }
 
-        this.handleSubtmit = this.handleSubtmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-    handleSubtmit(e) {
+    handleSubmit(e) {
         e.preventDefault()
 
         const obj = {
@@ -30,12 +30,17 @@ class TodoForm extends React.Component {
         } else return
     }
 
-    handleChange() {
-
+    handleChange(e) {
+        e.preventDefault()
+        this.setState({
+            value: e.target.value
+        })
     }
 
-    handleDelete() {
-
+    handleDelete(itemid) {
+        this.setState({
+            list: [...this.state.list].filter(el => el.id !== itemid)
+        })
     }
 
     render() {
@@ -53,10 +58,13 @@ class TodoForm extends React.Component {
                         className="todo-add"
                         type="submit"
                         value="+"
-                        onClick={this.handleSubtmit}
+                        onClick={this.handleSubmit}
                     />
                 </form>
-                {/* <TodoList /> */}
+                <TodoList
+                    list={this.state.list}
+                    handleDelete={this.handleDelete}
+                />
             </div>
         )
     }
