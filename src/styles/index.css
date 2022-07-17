@@ -1,0 +1,67 @@
+.app-wrap {
+  padding-top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.app-wrap h1 {
+  color: #fff;
+  white-space: nowrap;
+}
+
+.todo-item {
+  margin-bottom: 10px;
+  padding: 15px;
+  width: 100%;
+  font-size: 20px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.todo-item .todo-delete {
+  height: 20px;
+  aspect-ratio: 1;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0 100px;
+  width: 100%;
+}
+
+.todo-form-wrap {
+  width: 100%;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todo-form-wrap .todo-form .todo-input {
+  margin-bottom: 10px;
+  padding: 15px;
+  width: 350px;
+  font-size: 20px;
+  margin: 30px 30px 30px 0;
+}
+.todo-form-wrap .todo-form .todo-add {
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #383838;
+}/*# sourceMappingURL=index.css.map */

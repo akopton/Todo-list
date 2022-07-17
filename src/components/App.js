@@ -1,10 +1,10 @@
 import TodoForm from './TodoForm';
-import './App.css';
 
 function App() {
   return (
-    <div>
-      {/* <TodoForm /> */}
+    <div className='app-wrap'>
+      <h1>Let's plan what you have to do!</h1>
+      <TodoForm />
     </div>
   )
 }

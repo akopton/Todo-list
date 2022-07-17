@@ -1,0 +1,15 @@
+@import './_app';
+@import './_todo';
+@import './_todolist';
+@import './_todoform';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #383838;
+}

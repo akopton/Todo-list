@@ -45,14 +45,14 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-            <div className="app-wrap">
+            <div className="todo-form-wrap">
                 <form className="todo-form">
                     <input
                         className="todo-input"
                         type="text"
-                        placeholder=""
+                        placeholder="Add new todo..."
                         value={this.state.value}
-                        onChange={this.state.handleChange}
+                        onChange={this.handleChange}
                     />
                     <input
                         className="todo-add"

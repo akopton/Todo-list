@@ -1,4 +1,5 @@
 import React from "react";
+import Todo from "./Todo";
 
 class TodoList extends React.Component {
     constructor(props) {
@@ -11,12 +12,13 @@ class TodoList extends React.Component {
     render() {
         return (
             <ul className="todo-list">
-                {/* 
-                <Todo />
-                <Todo />
-                <Todo />
-                <Todo />
-                 */}
+                {this.props.list.map(el => (
+                    <Todo 
+                        value={el.value}
+                        key={el.id}
+                        handleDelete={() => this.props.handleDelete(el.id)}                     
+                    />
+                ))}
             </ul>
         )
     }
