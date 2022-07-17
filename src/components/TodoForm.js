@@ -1,5 +1,6 @@
 import React from "react";
 import TodoList from "./TodoList";
+import {useEffect} from "react";
 
 class TodoForm extends React.Component {
     constructor(props) {
@@ -12,6 +13,19 @@ class TodoForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+    }
+
+    componentDidMount() {
+        const savedTodos = localStorage.getItem('todos')
+        if (savedTodos) {
+            this.setState({
+                list: JSON.parse(savedTodos)
+            })
+        } else return []
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('todos', JSON.stringify(this.state.list))
     }
 
     handleSubmit(e) {
