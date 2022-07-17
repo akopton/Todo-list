@@ -28,7 +28,7 @@ class Todo extends React.Component {
                     value={this.state.value}
                     onChange={this.handleChange}
                     onBlur={()=> {
-                        if (this.state.value == '') this.props.handleDelete(this.state.id)
+                        if (this.state.value === '') this.props.handleDelete(this.state.id)
                     }}
                 />
                 <button className="todo-delete" onClick={this.props.handleDelete}>-</button>

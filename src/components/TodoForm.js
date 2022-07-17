@@ -1,6 +1,5 @@
 import React from "react";
 import TodoList from "./TodoList";
-import {useEffect} from "react";
 
 class TodoForm extends React.Component {
     constructor(props) {
