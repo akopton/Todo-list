@@ -61,7 +61,7 @@ class TodoForm extends React.Component {
 
     markDone(item) {
         this.setState({
-            list: [...this.state.list].map(el => (el.id == item.id && el.isDone === false) ? {...el, isDone: true,classList: ['todo-item', 'todo-item--done']} : {...el, isDone: false})
+            list: [...this.state.list].map(el => (el.id == item.id && el.isDone === false) ? {...el, isDone: true,classList: ['todo-item', 'todo-item--done'].join(' ')} : {...el, isDone: false})
         })
     }
 

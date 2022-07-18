@@ -21,7 +21,7 @@ class Todo extends React.Component {
 
     render() {
         return (
-            <li className={this.props.classList.join(' ')} key={this.state.id}>
+            <li className={this.props.classList} key={this.state.id}>
                 <input
                     className="todo-value"
                     type="text"
