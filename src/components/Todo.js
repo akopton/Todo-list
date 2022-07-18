@@ -10,7 +10,6 @@ class Todo extends React.Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
-        // this.markDone = this.markDone.bind(this)
     }
 
     handleChange(e) {
@@ -19,14 +18,6 @@ class Todo extends React.Component {
             value: e.target.value
         })
     }
-
-    // markDone(itemid) {
-    //     this.setState({
-    //         isDone: true,
-    //         classList: this.state.classList.concat("todo-item--done"),
-    //     })
-    // }
-    
 
     render() {
         return (
