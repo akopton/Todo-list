@@ -17,7 +17,9 @@ class TodoList extends React.Component {
                         list={this.props.list}
                         value={el.value}
                         key={el.id}
-                        handleDelete={() => this.props.handleDelete(el.id)}
+                        classList={el.classList}
+                        handleDelete={() => this.props.handleDelete(el)}
+                        markDone={() => this.props.markDone(el)}
                     />
                 ))}
             </ul>

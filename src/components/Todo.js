@@ -6,11 +6,11 @@ class Todo extends React.Component {
         this.state = {
             value: this.props.value,
             id: this.props.id,
-            isDone: false
+            isDone: false,
         }
 
         this.handleChange = this.handleChange.bind(this)
-        this.markDone = this.markDone.bind(this)
+        // this.markDone = this.markDone.bind(this)
     }
 
     handleChange(e) {
@@ -20,16 +20,17 @@ class Todo extends React.Component {
         })
     }
 
-    markDone(itemid) {
-        this.setState({
-            isDone: true
-        })
-    }
+    // markDone(itemid) {
+    //     this.setState({
+    //         isDone: true,
+    //         classList: this.state.classList.concat("todo-item--done"),
+    //     })
+    // }
     
 
     render() {
         return (
-            <li className={this.state.isDone ? 'todo-item--done' : 'todo-item'} key={this.state.id}>
+            <li className={this.props.classList.join(' ')} key={this.state.id}>
                 <input
                     className="todo-value"
                     type="text"
@@ -39,8 +40,9 @@ class Todo extends React.Component {
                         if (this.state.value === '') this.props.handleDelete(this.state.id)
                     }}
                 />
-                <button className="todo-done" onClick={this.markDone}>v</button>
-                <button className="todo-delete" onClick={this.props.handleDelete}>-</button>
+                <button className="todo-button todo-button--done" onClick={this.props.markDone}>v</button>
+                <button className="todo-button todo-button--delete" onClick={this.props.handleDelete}>-</button>
+                <div className="blur"></div>
             </li>
         )
     }

@@ -26,6 +26,8 @@
   border-radius: 8px;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
+  position: relative;
 }
 .todo-item:nth-of-type(4n+1) {
   background: linear-gradient(90deg, rgb(80, 50, 255) 0%, rgb(155, 0, 250) 100%);
@@ -39,17 +41,6 @@
 .todo-item:nth-of-type(4n+3) {
   background: linear-gradient(90deg, rgb(50, 150, 250) 0%, rgb(20, 100, 150) 100%);
 }
-.todo-item--done {
-  display: flex;
-  margin-bottom: 10px;
-  padding: 15px;
-  width: 100%;
-  font-size: 20px;
-  border-radius: 8px;
-  align-items: center;
-  justify-content: space-between;
-  background: black;
-}
 .todo-item .todo-value {
   width: 85%;
   background: none;
@@ -60,7 +51,9 @@
   resize: none;
   color: white;
 }
-.todo-item .todo-delete {
+.todo-item .todo-button {
+  margin-left: 10px;
+  position: static;
   height: 30px;
   aspect-ratio: 1;
   border-radius: 4px;
@@ -70,6 +63,34 @@
   background: rgba(63, 63, 63, 0.6);
   cursor: pointer;
   color: white;
+}
+.todo-item .todo-button--delete {
+  z-index: 10;
+}
+.todo-item .blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  background-color: rgba(61, 61, 61, 0.5);
+}
+.todo-item .blur::after {
+  content: "";
+  height: 2px;
+  background-color: #1f1f1f;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+}
+.todo-item--done .blur {
+  transform: translateX(0);
+  transition: transform 0.8s ease-in;
+}
+.todo-item--done .todo-button--done {
+  display: none;
 }
 
 .todo-list {

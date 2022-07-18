@@ -12,6 +12,7 @@ class TodoForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+        this.markDone = this.markDone.bind(this)
     }
 
     componentDidMount() {
@@ -33,7 +34,8 @@ class TodoForm extends React.Component {
         const obj = {
             value: this.state.value,
             id: Date.now(),
-            isDone: false
+            isDone: false,
+            classList: ['todo-item']
         }
 
         if (this.state.value !== '') {
@@ -51,9 +53,15 @@ class TodoForm extends React.Component {
         })
     }
 
-    handleDelete(itemid) {
+    handleDelete(item) {
         this.setState({
-            list: [...this.state.list].filter(el => el.id !== itemid)
+            list: [...this.state.list].filter(el => el.id !== item.id)
+        })
+    }
+
+    markDone(item) {
+        this.setState({
+            list: [...this.state.list].map(el => (el.id == item.id && el.isDone === false) ? {...el, isDone: true,classList: ['todo-item', 'todo-item--done']} : {...el, isDone: false})
         })
     }
 
@@ -78,6 +86,7 @@ class TodoForm extends React.Component {
                 <TodoList
                     list={this.state.list}
                     handleDelete={this.handleDelete}
+                    markDone={this.markDone}
                 />
             </div>
         )
