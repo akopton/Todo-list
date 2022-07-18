@@ -14,6 +14,7 @@ class TodoList extends React.Component {
             <ul className="todo-list">
                 {this.props.list.map(el => (
                     <Todo 
+                        list={this.props.list}
                         value={el.value}
                         key={el.id}
                         handleDelete={() => this.props.handleDelete(el.id)}

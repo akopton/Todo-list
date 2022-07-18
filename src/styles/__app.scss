@@ -1,13 +1,18 @@
 .app-wrap {
-    padding-top: 20%;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     h1 {
+        display: block;
         margin-bottom: 10px;
-        color: #fff;
         white-space: nowrap;
+        font-size: 6vw;
+
+        @media screen and (min-width: 560px) {
+            font-size: 34px;
+        }
     }
 }

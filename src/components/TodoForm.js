@@ -32,7 +32,8 @@ class TodoForm extends React.Component {
 
         const obj = {
             value: this.state.value,
-            id: Date.now()
+            id: Date.now(),
+            isDone: false
         }
 
         if (this.state.value !== '') {
