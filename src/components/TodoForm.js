@@ -47,7 +47,6 @@ class TodoForm extends React.Component {
     }
 
     handleChange(e) {
-        e.preventDefault()
         this.setState({
             value: e.target.value
         })
